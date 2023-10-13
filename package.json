@@ -1,0 +1,25 @@
+{
+  "name": "NeoPixelTubeLight",
+  "version": "1.0.0",
+  "description": "NeoPixelTubeLight",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib",
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "buildCpp":"node ./script/buildCpp.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Sk-Spark/NeoPixelTubeLight.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Sk-Spark/NeoPixelTubeLight/issues"
+  },
+  "homepage": "https://github.com/Sk-Spark/NeoPixelTubeLight#readme"
+}
