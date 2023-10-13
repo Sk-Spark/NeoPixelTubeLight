@@ -89,7 +89,7 @@ void wifi_setup() {
   //if it does not connect it starts an access point with the specified name
   //here  "AutoConnectAP"
   //and goes into a blocking loop awaiting configuration
-  wifiManager.autoConnect("NightLamp-AP");
+  wifiManager.autoConnect("SmartTubeLight-AP");
   //or use this for auto generated name ESP + ChipID
   // wifiManager.autoConnect();
   
@@ -198,7 +198,7 @@ void srv_handle_set() {
     if(server.argName(i) == "a") {
       if(server.arg(i)[0] == '-') {
         auto_cycle = false;
-      } else {
+      } else { // ?a=+
         auto_cycle = true;
         auto_last_change = 0;
       }

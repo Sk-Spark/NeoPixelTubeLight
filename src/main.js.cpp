@@ -1,12 +1,7 @@
-#include <pgmspace.h>
 
-/*
-The tiny Javascript/canvas based color picker is based on the clever work of the folks
-at Sparkbox. https://seesparkbox.com/foundry/how_i_built_a_canvas_color_picker
-*/
-
-char main_js[] PROGMEM = R"=====(
-//https://github.com/bgrins/TinyColor
+      #include <pgmspace.h>
+      char main_js[] PROGMEM = R"rawliteral(
+          //https://github.com/bgrins/TinyColor
 
 var addSwatch = document.getElementById('add-swatch');
 var modeToggle = document.getElementById('mode-toggle');
@@ -350,4 +345,5 @@ xhttp.open('GET', 'modes', true);
 xhttp.send();
 
 new ColorPicker();
-)=====";
+          )rawliteral";
+      

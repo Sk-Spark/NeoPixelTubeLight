@@ -1,11 +1,17 @@
-#include <pgmspace.h>
 
-/*
-The tiny Javascript/canvas based color picker is based on the clever work of the folks
-at Sparkbox. https://seesparkbox.com/foundry/how_i_built_a_canvas_color_picker
-*/
+      #include <pgmspace.h>
+      char main_css[] PROGMEM = R"rawliteral(
+          @media all and (max-device-width: 480px) {
+  body {
+    flex-direction: column;
+    align-items: center;
+  }
 
-char main_css[] PROGMEM = R"=====(
+  .flex-row-wrap{
+    padding-left: 0px;
+  }
+}
+
 body {
   background: #1f232a;
   font-family: "Proxima Nova", sans-serif;
@@ -17,9 +23,9 @@ body {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: space-evenly;
-      -ms-flex-pack: space-evenly;
-          justify-content: space-evenly;
-  min-width: 600px;
+  -ms-flex-pack: space-evenly;
+  justify-content: space-evenly;
+  /* min-width: 600px; */
 }
 
 .color-picker-panel {
@@ -28,7 +34,7 @@ body {
   border-radius: 8px;
   border: 2px solid #364347;
   -webkit-box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
-          box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
   height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
@@ -66,7 +72,7 @@ body {
   margin-left: 4px;
   margin-bottom: 4px;
   -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
   border: 2px solid #364347;
   cursor: pointer;
 }
@@ -83,7 +89,7 @@ body {
   border-radius: 100%;
   background: #ccc;
   -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
   position: absolute;
   pointer-events: none;
   z-index: 2;
@@ -161,7 +167,7 @@ body {
   color: #8b949a;
   font-size: 1rem;
   -webkit-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-          box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
   outline: none;
   cursor: pointer;
   padding: 4px;
@@ -198,8 +204,8 @@ body {
 .value-fields {
   display: none;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
 }
 
 .value-fields.active {
@@ -216,7 +222,7 @@ body {
   background: #15191c;
   border: 1px solid #364347;
   -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
   border-radius: 2px;
   line-height: 38px;
   padding: 0 4px;
@@ -231,8 +237,8 @@ body {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
 }
 
 .rgb-fields .field-input {
@@ -272,8 +278,8 @@ input::-webkit-inner-spin-button {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
 }
 
 ul {
@@ -305,14 +311,14 @@ ul.control {
   display: flex;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
   -webkit-box-pack: end;
-      -ms-flex-pack: end;
-          justify-content: flex-end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   padding: 0px;
 }
 
@@ -325,7 +331,23 @@ ul li a.active {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-pack: distribute;
-      justify-content: space-around;
+  justify-content: space-around;
 }
-/*# sourceMappingURL=colorPicker.css.map */
-)=====";
+
+.flex-row-wrap {
+  max-height: 82vh;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  margin-top: 0px;
+}
+
+.effects-div {
+  max-width: 80vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+/*# sourceMappingURL=main.css.map */
+
+          )rawliteral";
+      

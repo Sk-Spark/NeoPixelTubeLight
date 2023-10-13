@@ -1,6 +1,7 @@
-#include <pgmspace.h>
-char index_html[] PROGMEM = R"=====(
-<!DOCTYPE html>
+
+      #include <pgmspace.h>
+      char index_html[] PROGMEM = R"rawliteral(
+          <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -95,7 +96,7 @@ char index_html[] PROGMEM = R"=====(
         </div>
       </div>
     </div>
-    <div>
+    <div class="effects-div">
       <h2 class="effects-header">Effects</h2>
       <ul id='modes' class='flex-row-wrap'>
     </div>
@@ -103,4 +104,5 @@ char index_html[] PROGMEM = R"=====(
   <script type="text/javascript" src="main.js"></script>
 </html>
 
-)=====";
+          )rawliteral";
+      
