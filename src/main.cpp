@@ -30,7 +30,7 @@ extern const char main_css[];
 #define max(a,b) ((a)>(b)?(a):(b))
 
 #define LED_PIN 2                       // 0 = GPIO0, 2=GPIO2
-#define LED_COUNT 16
+#define LED_COUNT 71
 
 #define WIFI_TIMEOUT 60000              // checks WiFi every ...ms. Reset after this time, if WiFi cannot reconnect.
 #define HTTP_PORT 80
@@ -100,7 +100,7 @@ void wifi_setup() {
     Serial.println("Unable to Connect to WiFi.");
 
   // *** mDNS Setup ***
-  if (!MDNS.begin("NightLamp"))
+  if (!MDNS.begin("SmartTubeLight"))
   { // Start the mDNS responder for esp8266.local
       Serial.println("Error setting up MDNS responder!");
   }
